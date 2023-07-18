@@ -14,25 +14,57 @@ header("Access-Control-Allow-Headers:Access-Control-Allow-Mehtods,Content-Type,A
 	"scity":"ferozepur"
 }*/
 
-//json format data converted to associative array
-$data=json_decode(file_get_contents("php://input"),TRUE); 
-
-$name=$data['sname'];
-$age=$data['sage'];
-$city=$data['scity'];
-
-include "config.php";
-
-$sql="INSERT INTO students(student_name,age,city) VALUES('{$name}',{$age},'{$city}')";
 
 
-if(mysqli_query($conn,$sql)){
-	echo json_encode(array("message"=> "Student Record Inserted","status"=> TRUE));
-}else{
-	echo json_encode(array("message"=> "Student Record Can't Inserted","status"=> FALSE));
+
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $BName = $_POST['BName'];
+  $Content = $_POST['Content'];
+  $image = $_FILES['image'];
+  $BAlt = $_POST['BAlt'];
+  $CID = $_POST['CID'];
+
+  $targetDir = 'uploads/';
+  $targetFile = $targetDir . basename($image['name']);
+
+  // Move the uploaded image file to the desired directory
+  if (move_uploaded_file($image['tmp_name'], $targetFile)) {
+    // Establish a connection to the MySQL database
+	$conn = new mysqli('localhost', 'root', '', 'himalayan');
+
+
+    // Check if the connection was successful
+    if ($conn->connect_error) {
+      die('Connection failed: ' . $conn->connect_error);
+    }
+
+    // Prepare the SQL statement with parameter placeholders
+    $sql = 'INSERT INTO form_data (BName, Content, Image, BAlt, CID) VALUES (?, ?, ?, ?, ?)';
+    $stmt = $conn->prepare($sql);
+
+    // Bind the form data and image path to the prepared statement parameters
+    $stmt->bind_param('ssssi', $BName, $Content, $targetFile, $BAlt, $CID);
+
+    // Execute the prepared statement
+    if ($stmt->execute()) {
+      // Process the form data and perform necessary actions
+      // ...
+      // Return a response if needed
+
+
+	  echo json_encode(array("message" => "Student Record Inserted", "status" => TRUE));
+	} else {
+		echo json_encode(array("message" => $sql, "status" => FALSE));
+
+    
+    }
+
+    // Close the prepared statement and database connection
+    $stmt->close();
+    $conn->close();
+  } else {
+    echo 'Failed to upload image.';
+  }
 }
-?>
-
-
-
-
