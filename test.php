@@ -10,7 +10,7 @@ header("Access-Control-Allow-Headers:Access-Control-Allow-Mehtods,Content-Type,A
 
 
 
-$servername = "localhost";  // Replace with your MySQL server hostname
+$servername = "localhost";  // Rep  lace with your MySQL server hostname
 $username = "root";        // Replace with your MySQL username
 $password = "";    // Replace with your MySQL password
 $database = "himalayan"; // Replace with your MySQL database name
@@ -40,17 +40,17 @@ $title = $_POST['BName'];
 $content = $_POST['content'];
 $image = $_FILES['image']['tmp_name'];
 $altTag = $_POST['BAlt'];
-$categoryName = $_POST['Cname'];
+$categoryID = $_POST['CID'];
 $slug = $_POST['slug'];
 
 // Perform any necessary sanitization or validation of the input data
 
 // Move the uploaded image to a suitable location on your server
-$imagePath = 'uploads/' . $_FILES['image']['name'];
+$imagePath = 'http://localhost/himalayan/uploads/' . $_FILES['image']['name'];
 move_uploaded_file($image, $imagePath);
 
 // Insert the blog into the MySQL database
-$query = "INSERT INTO blog (BName, content, image, slug, BAlt, Cname) VALUES ('$title', '$content', '$imagePath', '$altTag', '$slug', '$categoryName')";
+$query = "INSERT INTO blog (BName, content, image, slug, BAlt, CID) VALUES ('$title', '$content', '$imagePath',  '$slug', '$altTag' , '$categoryID')";
 $result = mysqli_query($connection, $query);
 
 if ($result) {
@@ -64,5 +64,6 @@ if ($result) {
 // Send the response back to the client as JSON
 header('Content-Type: application/json');
 echo json_encode($response);
+echo json_decode($query );
 
 ?>

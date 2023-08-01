@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $BAlt = $_POST['BAlt'];
   $CID = $_POST['CID'];
 
-  $targetDir = 'uploads/';
+  $targetDir = "http://localhost/himalayan/uploads/";
   $targetFile = $targetDir . basename($image['name']);
 
   // Move the uploaded image file to the desired directory

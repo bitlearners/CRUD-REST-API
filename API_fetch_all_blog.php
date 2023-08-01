@@ -13,7 +13,8 @@ header("Access-Control-Allow-Headers:Access-Control-Allow-Mehtods,Content-Type,A
 
 include "config.php";
 
-$sql="SELECT * FROM blog";
+// $sql="SELECT * FROM blog";
+$sql="SELECT b.*, c.CName FROM blog b LEFT JOIN category c ON b.CID = c.CID";
 
 $result=mysqli_query($conn,$sql) or die("SQL Query Failed");
 

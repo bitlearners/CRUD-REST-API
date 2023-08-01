@@ -17,36 +17,52 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type
 //{"sid": "1"} suppose manlo is format me data aya hoga
 //json format me jo data ayega uske liye
 
-$data=json_decode(file_get_contents("php://input"),TRUE); //true pass kregy toh json decode() associative array return krta hai
-#php://input ===ye agr request mobileAPP ya desktopApp ya WebApp se ayi hai jo bhi raw data ayega usko read krega chae kon se bi format se ho json ho ya xml
-$path = explode('/', $_SERVER['REQUEST_URI']);
 
-
-if (isset($path[3]) && is_numeric($path[3])){
-
-  $id=$path[3];
 
   include "config.php";
+// Check if the slug is present in the URL
+if (isset($_GET['slug'])) {
+  // Retrieve the slug from the URL and sanitize it
+  $slug = trim($_GET['slug']);
+  $slug = mysqli_real_escape_string($conn, $slug);
 
-  $sql="SELECT * FROM blog WHERE BID='{$id}'";
+  // Prepare the SQL statement to fetch data from the 'blog' table based on the slug
+  $sql = "SELECT * FROM blog WHERE slug = '$slug' LIMIT 1";
 
-  
-  $result=mysqli_query($conn,$sql) or die("SQL Query Failed");
-  
-  if(mysqli_num_rows($result) > 0){
-    $output=mysqli_fetch_all($result,MYSQLI_ASSOC);
-    echo json_encode($output);
-  }else{
-    echo json_encode(array("message"=> "No Records Found","status"=> FALSE));
+  // $sql="SELECT b.*, c.CName FROM blog b LEFT JOIN category c ON b.CID = c.CID WHERE slug = '$slug' LIMIT 1";
+
+  // Execute the SQL query
+  $result = $conn->query($sql);
+
+  // Check if there are results
+  if ($result->num_rows > 0) {
+      // Fetch the data from the result set as an associative array
+      $data = $result->fetch_assoc();
+
+      // Close the connection
+      $conn->close();
+
+      // Encode the data as JSON and print it
+      header('Content-Type: application/json');
+      echo json_encode($data);
+  } else {
+      // No data found for the given slug
+      // Close the connection
+      $conn->close();
+
+      // Return an error response as JSON
+      header('Content-Type: application/json');
+      echo json_encode(array("error" => "No data found for the given slug"));
   }
+} else {
+  // Slug parameter is not provided in the URL
+  // Close the connection
+  $conn->close();
+
+  // Return an error response as JSON
+  header('Content-Type: application/json');
+  echo json_encode(array("error" => "Slug parameter is not provided in the URL"));
 }
-else{
-  echo json_encode(array("message"=> "error in url","status"=> FALSE));
-  
-}
-
-
-
 
 
 ?>

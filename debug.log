@@ -1,0 +1,77 @@
+Array
+(
+    [PName] => debug1
+    [PDuration] => debug1
+    [PLocation] => debug1
+    [PHighlight] => <p>debug1</p>
+    [POverview] => <p>debug1</p>
+    [PackPolicyID] => <p>debug1</p>
+    [CID] => 2
+    [slug] => debug1
+    [multilocation] => Array
+        (
+            [0] => Himachal Pradesh
+            [1] => Jammu
+            [2] => Kashmir
+            [3] => Uttarakhand
+            [4] => Himachal Pradesh
+            [5] => Jammu
+            [6] => Himachal Pradesh
+            [7] => Jammu
+            [8] => Kashmir
+        )
+
+)
+
+Array
+(
+    [image] => Array
+        (
+            [name] => Siddhayu 7.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpFB7D.tmp
+            [error] => 0
+            [size] => 3025241
+        )
+
+)
+
+Array
+(
+    [PName] => debug1
+    [PDuration] => debug1
+    [PLocation] => debug1
+    [PHighlight] => <p>debug1</p>
+    [POverview] => <p>debug1</p>
+    [PackPolicyID] => <p>debug1</p>
+    [CID] => 2
+    [slug] => debug1
+    [multilocation] => Array
+        (
+            [0] => Himachal Pradesh
+            [1] => Jammu
+            [2] => Kashmir
+            [3] => Uttarakhand
+            [4] => Himachal Pradesh
+            [5] => Jammu
+            [6] => Himachal Pradesh
+            [7] => Jammu
+            [8] => Kashmir
+        )
+
+)
+
+Array
+(
+    [image] => Array
+        (
+            [name] => Siddhayu 9.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpD692.tmp
+            [error] => 0
+            [size] => 5969520
+        )
+
+)
+
+Debug Message: Image uploaded successfully.

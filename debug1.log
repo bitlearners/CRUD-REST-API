@@ -1,0 +1,38 @@
+Array
+(
+    [PName] => abhishek
+    [PDuration] => abhishek
+    [PLocation] => abhishek
+    [PHighlight] => <p>abhishek</p>
+    [POverview] => <p>abhishek</p>
+    [PackPolicyID] => <p>abhishek</p>
+    [CID] => 4
+    [slug] => abhishek
+    [multilocation] => Array
+        (
+            [0] => Rishikesh
+            [1] => Haridwar
+            [2] => Auli
+            [3] => Mussorie
+            [4] => Kedarnath
+            [5] => Badrinath
+            [6] => Ranikhet
+            [7] => Srinagar
+            [8] => Gulmarg
+        )
+
+)
+
+Array
+(
+    [image] => Array
+        (
+            [name] => Siddhayu 7.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php1642.tmp
+            [error] => 0
+            [size] => 3025241
+        )
+
+)
+
