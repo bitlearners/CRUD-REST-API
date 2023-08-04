@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/himalayan/static/css/main.ce257edb.css",
+    "main.js": "/himalayan/static/js/main.e6be48c6.js",
+    "index.html": "/himalayan/index.html",
+    "main.ce257edb.css.map": "/himalayan/static/css/main.ce257edb.css.map",
+    "main.e6be48c6.js.map": "/himalayan/static/js/main.e6be48c6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ce257edb.css",
+    "static/js/main.e6be48c6.js"
+  ]
+}

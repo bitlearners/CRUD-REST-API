@@ -13,7 +13,7 @@ header("Access-Control-Allow-Headers:Access-Control-Allow-Mehtods,Content-Type,A
 
 include "config.php";
 
-$sql="SELECT * FROM `memories for life time`";
+$sql="SELECT * FROM `memories_for_life_time`";
 
 
 
