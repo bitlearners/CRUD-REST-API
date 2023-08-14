@@ -13,7 +13,7 @@
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
+ * LICENSE file in the himalayan directory of this source tree.
  */
 
 /**
@@ -23,7 +23,7 @@
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
+ * LICENSE file in the himalayan directory of this source tree.
  */
 
 /**
@@ -33,7 +33,7 @@
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
+ * LICENSE file in the himalayan directory of this source tree.
  */
 
 /**
@@ -43,7 +43,7 @@
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
+ * LICENSE file in the himalayan directory of this source tree.
  */
 
 /**
@@ -52,7 +52,7 @@
  * Copyright (c) Remix Software Inc.
  *
  * This source code is licensed under the MIT license found in the
- * LICENSE.md file in the root directory of this source tree.
+ * LICENSE.md file in the himalayan directory of this source tree.
  *
  * @license MIT
  */
@@ -63,7 +63,7 @@
  * Copyright (c) Remix Software Inc.
  *
  * This source code is licensed under the MIT license found in the
- * LICENSE.md file in the root directory of this source tree.
+ * LICENSE.md file in the himalayan directory of this source tree.
  *
  * @license MIT
  */
@@ -74,7 +74,7 @@
  * Copyright (c) Remix Software Inc.
  *
  * This source code is licensed under the MIT license found in the
- * LICENSE.md file in the root directory of this source tree.
+ * LICENSE.md file in the himalayan directory of this source tree.
  *
  * @license MIT
  */

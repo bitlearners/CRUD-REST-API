@@ -9,16 +9,7 @@ header("Access-Control-Allow-Mehtods: POST");   //insert ke liye post method cha
 header("Access-Control-Allow-Headers:Access-Control-Allow-Mehtods,PDuration-Type,Access-Control-Allow-Mehtods,Authorization,X-Requested-With");
 
 
-// Connect to your MySQL database (Replace with your actual database credentials)
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "himalayan";
-
-$conn = new mysqli($host, $username, $password, $database);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include "db_config.php";
 
 // API endpoint to add a new package
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["image"])) {

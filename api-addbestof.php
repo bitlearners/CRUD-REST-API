@@ -4,18 +4,7 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With");
 
-$host = 'localhost';
-$username = 'root';
-$password = '';
-$database = 'himalayan';
-
-// Establish a connection to the database
-$conn = new mysqli($host, $username, $password, $database);
-
-// Check the connection
-if ($conn->connect_error) {
-    die('Connection failed: ' . $conn->connect_error);
-}
+include "db_config.php";
 
 // Check if the request is a POST request
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -55,6 +44,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Move the uploaded image to the target directory
         if (move_uploaded_file($_FILES["Bimg"]["tmp_name"], $targetFilePath)) {
+
+            $img='http://localhost/himalayan/' .$targetFilePath;
+
             // Image upload successful, now insert data into the database
 
             // Create a prepared statement to insert the data
@@ -71,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
 
             // Bind the parameters to the statement
-            $stmt->bind_param("ssss", $slug, $fileName, $BName, $BAlt);
+            $stmt->bind_param("ssss", $slug, $img, $BName, $BAlt);
 
             // Execute the prepared statement
             if ($stmt->execute()) {

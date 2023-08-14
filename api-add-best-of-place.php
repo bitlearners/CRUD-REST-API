@@ -9,19 +9,8 @@ header("Access-Control-Allow-Headers:Access-Control-Allow-Mehtods,PDuration-Type
 
 
 // Assuming you have a MySQL database, replace the database credentials below
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "himalayan";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+include "db_config.php";
 // Check if the request method is POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $CID = $_POST["categoryId"];

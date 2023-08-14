@@ -20,7 +20,7 @@ category.PID AS category_PID, category.front, category.state_city
 FROM best_of
 JOIN best_of_place ON best_of.Best_id = best_of_place.Best_id
 JOIN category ON best_of_place.CID = category.CID
-WHERE best_of.Best_id = '2'
+WHERE best_of.Best_id = '5'
 ";
 
 

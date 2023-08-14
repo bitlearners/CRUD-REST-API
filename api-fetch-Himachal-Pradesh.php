@@ -34,9 +34,9 @@ FROM
 JOIN
     best_of_place bp ON p.PID = bp.PID
 JOIN
-    best_of bo ON bp.Best_id = bo.Best_id
+    best_Best_idof bo ON bp.Best_id = bo.Best_id
 WHERE
-    bo.Best_id = '6'
+    bo. = '6'
 ";
 
 

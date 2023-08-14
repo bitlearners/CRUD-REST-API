@@ -15,39 +15,15 @@ if (isset($_GET['slug'])) {
 
   // Prepare the SQL statement to fetch data from the 'blog' table based on the slug
   $sql = "
-  SELECT 
-    p.PID,
-    p.CID,
-    p.PName,
-    p.PDuration,
-    p.PLocation,
-    p.PHighlight,
-    p.POverview,
-    p.PackPolicyID,
-    p.image_path,
-    p.slug as   ,
-    p.multiplelocation,
-    c.CID,
-    c.CName,
-    c.slug,
-    c.CImg,
-    c.CAlt,
-    c.front,
-    c.state_city,
-    m.Mid,
-    m.MName,
-    m.MSlug,
-    m.MImg,
-    m.MAlt
-FROM    
-    package p
-INNER JOIN
-    category c ON p.CID = c.CID
-INNER JOIN
-    memories_for_life_time m ON c.CID = m.CID
 
+SELECT
+    *
+FROM
+    pkg_for_himalayan
+JOIN category ON pkg_for_himalayan.CID = category.CID
 WHERE
-    M.MSlug = '$slug'";
+    `category`.`slug` = '$slug'";
+
 
   // Execute the SQL query
   $result = $conn->query($sql);

@@ -13,8 +13,10 @@ header("Access-Control-Allow-Headers:Access-Control-Allow-Mehtods,Content-Type,A
 
 include "config.php";
 
-$sql="SELECT * FROM `memories_for_life_time`";
-
+$sql="
+SELECT m.Mid, m.MName, m.MSlug, m.MImg, m.MAlt, c.CID, c.slug
+FROM memories_for_life_time m
+JOIN category c ON m.CID = c.CID";
 
 
 $result=mysqli_query($conn,$sql) or die("SQL Query Failed");

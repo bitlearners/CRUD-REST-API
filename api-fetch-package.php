@@ -13,7 +13,7 @@ header("Access-Control-Allow-Headers:Access-Control-Allow-Mehtods,Content-Type,A
 
 include "config.php";
 
-$sql="SELECT * FROM package";
+$sql="SELECT * FROM pkg_for_himalayan";
 
 
 

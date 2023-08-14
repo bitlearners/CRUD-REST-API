@@ -6,7 +6,7 @@
 		private $server = 'localhost';
 		private $dbname = 'himalayan';
 		private $user = 'root';
-		private $pass = '';
+		private $pass = '""';
 
 		public function connect() {
 			try {
